@@ -289,6 +289,97 @@ a {
 }
 
 /* ===========================
+   HOME - TECH STACK
+=========================== */
+.tech-stack {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  margin-bottom: 48px;
+}
+
+.stack-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stack-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.stack-cat-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 400;
+  min-width: 80px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.stack-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--surface);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.stack-chip:hover {
+  border-color: var(--text-muted);
+  background: var(--bg);
+}
+
+.stack-chip img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.stack-chip span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ===========================
+   HOME - GITHUB ACTIVITY
+=========================== */
+.github-activity {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  margin-bottom: 48px;
+}
+
+.gh-chart-wrap {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.gh-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ===========================
    HOME - FEATURED PROJECTS
 =========================== */
 .featured-projects {
@@ -346,6 +437,15 @@ a {
 .project-row:hover .project-row-arrow {
   opacity: 1;
   transform: translate(2px, -2px);
+}
+
+.project-favicon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 
 .project-row-name {
@@ -820,5 +920,15 @@ a {
 
   .project-row-desc {
     display: none;
+  }
+
+  .stack-category {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stack-cat-label {
+    min-width: unset;
+    padding-top: 0;
   }
 }

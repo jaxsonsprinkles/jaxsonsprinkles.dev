@@ -1,7 +1,7 @@
-// Active nav icon based on current page
+// Active nav link based on current page
 (function () {
   const path = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-icon').forEach(function (el) {
+  document.querySelectorAll('.nav-link').forEach(function (el) {
     const href = el.getAttribute('href') || '';
     if (href === path || (path === '' && href === 'index.html')) {
       el.classList.add('active');
@@ -23,12 +23,37 @@
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Close on link click
   menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () {
       menu.classList.remove('open');
       btn.classList.remove('open');
       document.body.style.overflow = '';
     });
+  });
+})();
+
+// Press [c] to copy email
+(function () {
+  var hint = document.getElementById('emailHint');
+  if (!hint) return;
+  var original = hint.innerHTML;
+
+  document.addEventListener('keydown', function (e) {
+    if (
+      e.key === 'c' &&
+      !e.ctrlKey &&
+      !e.metaKey &&
+      document.activeElement.tagName !== 'INPUT' &&
+      document.activeElement.tagName !== 'TEXTAREA'
+    ) {
+      navigator.clipboard.writeText('jaxsonsprinkles@gmail.com').then(function () {
+        hint.textContent = 'copied ✓';
+        hint.classList.add('copied');
+        setTimeout(function () {
+          hint.innerHTML = original;
+          hint.classList.remove('copied');
+        }, 2000);
+      }).catch(function () {});
+    }
   });
 })();

@@ -644,6 +644,12 @@ a {
   color: var(--text-muted);
 }
 
+.signature {
+  width: 200px;
+  height: auto;
+  margin-top: 24px;
+}
+
 .about-image-slot {
   position: sticky;
   top: 40px;

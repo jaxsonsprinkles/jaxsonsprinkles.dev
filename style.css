@@ -147,6 +147,7 @@ a {
   gap: 5px;
   cursor: default;
   user-select: none;
+  min-height: 22px;
 }
 
 .email-hint kbd {
@@ -170,8 +171,8 @@ a {
 }
 
 .hero-photo img {
-  width: 96px;
-  height: 116px;
+  width: 112px;
+  height: 136px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center top;

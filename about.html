@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About — Jaxson Sprinkles</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slot-text/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,6 +42,7 @@
       <div class="about-body">
         <div class="about-text">
           <p class="about-lead">
+            I've been coding for <span id="years-counter" class="years-counter">0.0000000</span> years.
             I'm a developer with a focus on AI and product building. My work
             ranges from training neural nets from scratch to building full-stack
             applications that hundreds of people use.
@@ -85,5 +87,22 @@
     </main>
 
     <script src="main.js"></script>
+    <script type="module">
+      import { slotText } from "https://cdn.jsdelivr.net/npm/slot-text/+esm";
+
+      const START = new Date("2020-06-15T00:00:00").getTime();
+      const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.25;
+
+      function yearsStr() {
+        return ((Date.now() - START) / MS_PER_YEAR).toFixed(7);
+      }
+
+      const el = document.getElementById("years-counter");
+      const label = slotText(el, yearsStr());
+
+      setInterval(() => {
+        label.set(yearsStr(), { direction: "up", duration: 250, stagger: 20 });
+      }, 350);
+    </script>
   </body>
 </html>

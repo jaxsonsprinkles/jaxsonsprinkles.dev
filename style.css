@@ -569,6 +569,15 @@ a {
   align-items: start;
 }
 
+.years-counter {
+  display: inline-block;
+  min-width: 8.5ch;
+  font-variant-numeric: tabular-nums;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
 .about-lead {
   font-size: 0.97rem;
   color: var(--text);

@@ -171,8 +171,8 @@ a {
 }
 
 .hero-photo img {
-  width: 112px;
-  height: 136px;
+  width: 148px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
   object-position: center top;
@@ -564,7 +564,7 @@ a {
 =========================== */
 .about-body {
   display: grid;
-  grid-template-columns: 1fr 190px;
+  grid-template-columns: 1fr 260px;
   gap: 52px;
   align-items: start;
 }

@@ -41,7 +41,7 @@
   var CELL = 12;
   var GAP = 3;
   var STEP = CELL + GAP;
-  var WEEKS = 26;
+  var WEEKS = 52;
   var COLORS = ['#e8e8e8', '#b5d9b8', '#6ab978', '#2d8a48', '#1a6b3c'];
 
   var tip = document.createElement('div');
@@ -62,6 +62,7 @@
     contributions.forEach(function (c) { map[c.date] = c; });
 
     var today = new Date();
+    var todayStr = today.toISOString().split('T')[0];
     var weekStart = new Date(today);
     weekStart.setDate(today.getDate() - today.getDay());
 
@@ -72,16 +73,26 @@
         var dt = new Date(weekStart);
         dt.setDate(weekStart.getDate() - w * 7 + d);
         var ds = dt.toISOString().split('T')[0];
-        week.push(map[ds] || { date: ds, count: 0, level: 0 });
+        week.push({ date: ds, count: (map[ds] || {}).count || 0, level: (map[ds] || {}).level || 0, future: ds > todayStr });
       }
       weeks.push(week);
     }
 
+    // Month labels: first column always gets its month; subsequent labels only
+    // when the 1st of the month falls in that week and it's 3+ cols from last label.
     var monthLabels = [];
-    var lastMonth = -1;
+    var lastLabelCol = -4;
+    monthLabels.push({ col: 0, label: MONTHS[new Date(weeks[0][0].date + 'T12:00:00').getMonth()] });
+    lastLabelCol = 0;
     weeks.forEach(function (week, i) {
-      var m = new Date(week[0].date + 'T12:00:00').getMonth();
-      if (m !== lastMonth) { monthLabels.push({ col: i, label: MONTHS[m] }); lastMonth = m; }
+      for (var d = 0; d < week.length; d++) {
+        var day = new Date(week[d].date + 'T12:00:00');
+        if (day.getDate() === 1 && i - lastLabelCol >= 3) {
+          monthLabels.push({ col: i, label: MONTHS[day.getMonth()] });
+          lastLabelCol = i;
+          break;
+        }
+      }
     });
 
     var wrapper = document.createElement('div');
@@ -117,13 +128,16 @@
 
       week.forEach(function (contrib) {
         var cell = document.createElement('div');
-        cell.style.cssText = 'width:' + CELL + 'px;height:' + CELL + 'px;border-radius:2px;cursor:default;flex-shrink:0;background:' + COLORS[contrib.level || 0] + ';';
-        var text = contrib.count === 0
-          ? 'No contributions on ' + fmtDate(contrib.date)
-          : contrib.count + ' contribution' + (contrib.count !== 1 ? 's' : '') + ' on ' + fmtDate(contrib.date);
-        cell.addEventListener('mouseenter', function (e) { showTip(e, text); });
-        cell.addEventListener('mousemove', moveTip);
-        cell.addEventListener('mouseleave', hideTip);
+        var bg = contrib.future ? 'transparent' : COLORS[contrib.level || 0];
+        cell.style.cssText = 'width:' + CELL + 'px;height:' + CELL + 'px;border-radius:2px;cursor:default;flex-shrink:0;background:' + bg + ';';
+        if (!contrib.future) {
+          var text = contrib.count === 0
+            ? 'No contributions on ' + fmtDate(contrib.date)
+            : contrib.count + ' contribution' + (contrib.count !== 1 ? 's' : '') + ' on ' + fmtDate(contrib.date);
+          cell.addEventListener('mouseenter', function (e) { showTip(e, text); });
+          cell.addEventListener('mousemove', moveTip);
+          cell.addEventListener('mouseleave', hideTip);
+        }
         weekEl.appendChild(cell);
       });
 
@@ -144,10 +158,10 @@
     inner.appendChild(wrapper);
 
     var total = weeks.reduce(function (sum, week) {
-      return sum + week.reduce(function (s, c) { return s + (c.count || 0); }, 0);
+      return sum + week.reduce(function (s, c) { return s + (!c.future ? c.count || 0 : 0); }, 0);
     }, 0);
     var footer = document.createElement('p');
-    footer.textContent = total.toLocaleString() + ' contributions in the last 6 months';
+    footer.textContent = total.toLocaleString() + ' contributions in the last year';
     footer.style.cssText = 'margin-top:10px;font-size:11px;color:var(--text-muted);font-family:var(--font-mono);';
 
     container.innerHTML = '';

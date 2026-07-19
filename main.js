@@ -98,14 +98,6 @@
     var wrapper = document.createElement('div');
     wrapper.style.cssText = 'display:flex;align-items:flex-start;gap:6px;min-width:max-content;';
 
-    var dayCol = document.createElement('div');
-    dayCol.style.cssText = 'display:flex;flex-direction:column;gap:' + GAP + 'px;padding-top:22px;flex-shrink:0;';
-    ['', 'Mon', '', 'Wed', '', 'Fri', ''].forEach(function (label) {
-      var s = document.createElement('span');
-      s.textContent = label;
-      s.style.cssText = 'height:' + CELL + 'px;font-size:9px;color:var(--text-muted);font-family:var(--font-mono);line-height:' + CELL + 'px;display:block;';
-      dayCol.appendChild(s);
-    });
 
     var main = document.createElement('div');
     main.style.cssText = 'display:flex;flex-direction:column;';
@@ -150,7 +142,6 @@
 
     main.appendChild(monthRow);
     main.appendChild(weeksRow);
-    wrapper.appendChild(dayCol);
     wrapper.appendChild(main);
 
     var inner = document.createElement('div');

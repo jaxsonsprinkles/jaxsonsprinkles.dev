@@ -41,7 +41,7 @@
   var CELL = 12;
   var GAP = 3;
   var STEP = CELL + GAP;
-  var WEEKS = 52;
+  var WEEKS = 36;
   var COLORS = ['#e8e8e8', '#b5d9b8', '#6ab978', '#2d8a48', '#1a6b3c'];
 
   var tip = document.createElement('div');
@@ -161,7 +161,7 @@
       return sum + week.reduce(function (s, c) { return s + (!c.future ? c.count || 0 : 0); }, 0);
     }, 0);
     var footer = document.createElement('p');
-    footer.textContent = total.toLocaleString() + ' contributions in the last year';
+    footer.textContent = total.toLocaleString() + ' contributions in the last 9 months';
     footer.style.cssText = 'margin-top:10px;font-size:11px;color:var(--text-muted);font-family:var(--font-mono);';
 
     container.innerHTML = '';

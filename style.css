@@ -301,9 +301,17 @@ a {
   flex-direction: column;
 }
 
+.work-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 .work-item {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
   padding: 13px 0;
   border-bottom: 1px solid var(--border);
@@ -359,7 +367,7 @@ a {
 }
 
 #gh-graph {
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 .gh-tooltip {

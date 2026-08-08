@@ -18,16 +18,17 @@ Static personal website for jaxsonsprinkles.dev. No build step, no framework, no
 
 **Every page** must include:
 1. Hamburger button + `#mobileMenu` div (mobile nav)
-2. `.sidebar` nav with icon links
+2. `.topnav` with `.nav-links` (`.nav-link` items)
 3. `<link rel="stylesheet" href="style.css">` (or `../style.css` in `blog/`)
 4. `<script src="main.js">` (or `../main.js` in `blog/`) at end of `<body>`
-5. Set `class="active"` on the correct `.nav-icon` for the current page (hardcoded in HTML; `main.js` will override on load)
+5. Set `class="active"` on the correct `.nav-link` for the current page (hardcoded in HTML; `main.js` will override on load)
+6. `<meta name="description">`, `og:*`/`twitter:*` tags, `<link rel="canonical">`, and `<link rel="icon" type="image/svg+xml" href="favicon.svg">` (or `../favicon.svg` in `blog/`)
 
 **Design tokens** (CSS vars in `:root`):
 - `--bg`, `--surface`, `--border` — background layers
 - `--text`, `--text-muted`, `--text-light` — text hierarchy
-- `--accent` / `--accent-hover` — green (`#2d5a27` / `#3d7a35`)
-- `--font-serif` (Lora) / `--font-sans` (Nunito)
+- `--accent` / `--accent-hover` — green (`#1a6b3c` / `#1f8049`)
+- `--font-sans` (Inter) / `--font-mono` (JetBrains Mono)
 
 **New blog posts**: create `blog/<slug>.html`, copy structure from existing post, update `blog.html` index listing.
 

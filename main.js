@@ -1,3 +1,13 @@
+// Respect prefers-reduced-motion for the autoplaying signature animation
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.signature').forEach(function (el) {
+      el.removeAttribute('autoplay');
+      el.removeAttribute('loop');
+    });
+  }
+})();
+
 // Active nav link based on current page
 (function () {
   const path = window.location.pathname.split('/').pop() || 'index.html';
@@ -43,6 +53,7 @@
   var STEP = CELL + GAP;
   var WEEKS = 36;
   var COLORS = ['#e8e8e8', '#b5d9b8', '#6ab978', '#2d8a48', '#1a6b3c'];
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var tip = document.createElement('div');
   tip.className = 'gh-tooltip';
@@ -116,7 +127,9 @@
 
     weeks.forEach(function (week, wi) {
       var weekEl = document.createElement('div');
-      weekEl.style.cssText = 'display:flex;flex-direction:column;gap:' + GAP + 'px;opacity:0;transform:translateY(4px);transition:opacity 0.25s ease,transform 0.25s ease;';
+      weekEl.style.cssText = reduceMotion
+        ? 'display:flex;flex-direction:column;gap:' + GAP + 'px;'
+        : 'display:flex;flex-direction:column;gap:' + GAP + 'px;opacity:0;transform:translateY(4px);transition:opacity 0.25s ease,transform 0.25s ease;';
 
       week.forEach(function (contrib) {
         var cell = document.createElement('div');
@@ -134,10 +147,12 @@
       });
 
       weeksRow.appendChild(weekEl);
-      setTimeout(function () {
-        weekEl.style.opacity = '1';
-        weekEl.style.transform = 'translateY(0)';
-      }, wi * 22 + 80);
+      if (!reduceMotion) {
+        setTimeout(function () {
+          weekEl.style.opacity = '1';
+          weekEl.style.transform = 'translateY(0)';
+        }, wi * 22 + 80);
+      }
     });
 
     main.appendChild(monthRow);

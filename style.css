@@ -1016,3 +1016,16 @@ a {
     font-size: 1.3rem;
   }
 }
+
+/* ===========================
+   REDUCED MOTION
+=========================== */
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+
+  .stack-marquee-track {
+    animation: none;
+  }
+}

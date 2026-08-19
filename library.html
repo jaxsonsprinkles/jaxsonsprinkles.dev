@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library — Jaxson Sprinkles</title>
+    <meta name="description" content="A shelf of books Jaxson Sprinkles has read — hover a spine for the title and author." />
+    <link rel="canonical" href="https://jaxsonsprinkles.dev/library.html" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Library — Jaxson Sprinkles" />
+    <meta property="og:description" content="A shelf of books I've read — hover a spine for the title and author." />
+    <meta property="og:url" content="https://jaxsonsprinkles.dev/library.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Library — Jaxson Sprinkles" />
+    <meta name="twitter:description" content="A shelf of books I've read — hover a spine for the title and author." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Work</a>
+      <a href="blog.html">Writing</a>
+      <a href="library.html">Library</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <nav class="topnav">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Work</a>
+        <a href="blog.html" class="nav-link">Writing</a>
+        <a href="library.html" class="nav-link active">Library</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <main class="content content-wide">
+      <div class="page-header">
+        <h1 class="page-title">Library</h1>
+        <p class="page-sub">
+          Books I've read, lined up on a shelf. Hover or focus a spine for the title and author.
+        </p>
+      </div>
+
+      <div class="library-shelf-outer">
+        <div class="library-shelf-scroll">
+          <div class="library-shelf" id="library-shelf"></div>
+        </div>
+      </div>
+      <p class="library-hint">scroll for more →</p>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="library.js"></script>
+  </body>
+</html>

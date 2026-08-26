@@ -184,29 +184,3 @@
       container.innerHTML = '<p style="font-size:11px;color:var(--text-muted)">could not load activity</p>';
     });
 })();
-
-// Press [c] to copy email
-(function () {
-  var hint = document.getElementById('emailHint');
-  if (!hint) return;
-  var original = hint.innerHTML;
-
-  document.addEventListener('keydown', function (e) {
-    if (
-      e.key === 'c' &&
-      !e.ctrlKey &&
-      !e.metaKey &&
-      document.activeElement.tagName !== 'INPUT' &&
-      document.activeElement.tagName !== 'TEXTAREA'
-    ) {
-      navigator.clipboard.writeText('jaxsonsprinkles@gmail.com').then(function () {
-        hint.textContent = 'copied ✓';
-        hint.classList.add('copied');
-        setTimeout(function () {
-          hint.innerHTML = original;
-          hint.classList.remove('copied');
-        }, 2000);
-      }).catch(function () {});
-    }
-  });
-})();

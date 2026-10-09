@@ -6,7 +6,7 @@
     <title>Work — Jaxson Sprinkles</title>
     <meta name="description" content="Projects by Jaxson Sprinkles — AI tools and SaaS products including Mochi, Avian, Fluent, Limbo, and RepoAI." />
     <link rel="canonical" href="https://jaxsonsprinkles.dev/projects.html" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Work — Jaxson Sprinkles" />
     <meta property="og:description" content="AI tools and SaaS products including Mochi, Avian, Fluent, Limbo, and RepoAI." />
@@ -14,7 +14,6 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Work — Jaxson Sprinkles" />
     <meta name="twitter:description" content="AI tools and SaaS products including Mochi, Avian, Fluent, Limbo, and RepoAI." />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,183 +22,7 @@
     />
   </head>
   <body>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Work</a>
-      <a href="blog.html">Writing</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-    </div>
-
-    <nav class="topnav">
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="projects.html" class="nav-link active">Work</a>
-        <a href="blog.html" class="nav-link">Writing</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="resume.pdf" class="nav-link" target="_blank">Resume</a>
-      </div>
-    </nav>
-
-    <main class="content">
-      <div class="page-header">
-        <h1 class="page-title">Work</h1>
-        <p class="page-sub">
-          Things I've built — AI tools, systems experiments, and apps people actually use.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">Mochi</h2>
-              <p class="project-card-tag">AI · Health · iMessage</p>
-            </div>
-            <a href="https://mochitext.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              mochitext.com ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            Calorie and macro tracking that lives in your iMessage. Text or
-            photo a meal, get instant logging — no app to open. Supports
-            barcode and restaurant lookups, proactive nudges, weight tracking,
-            streaks, and coaching tone modes.
-          </p>
-          <div class="project-card-tech">
-            <span>Bun</span><span>Hono</span><span>Next.js</span><span>Convex</span><span>GPT-4.1</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">Forge</h2>
-              <p class="project-card-tag">AI · Agent Framework · Open Source</p>
-            </div>
-            <a href="https://github.com/jaxsonsprinkles/forge" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              github ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            A framework that builds and improves AI agents automatically. Give it a task
-            spec and Forge writes an agent, runs it, analyzes failures, proposes changes,
-            and keeps what measurably helps — across generations of code mutation and
-            persistent memory.
-          </p>
-          <div class="project-card-tech">
-            <span>Python</span><span>LLM Agents</span><span>Evals</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">Avian</h2>
-              <p class="project-card-tag">AI · SaaS · Outreach</p>
-            </div>
-            <a href="https://avian.sh" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              avian.sh ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            AI-powered outreach research platform. Input a name, email, or social handle
-            and Avian builds a personality profile and generates tailored messages in under
-            a minute — short, warm, or hyper-specific variants for any platform.
-          </p>
-          <div class="project-card-tech">
-            <span>Next.js</span><span>Convex</span><span>OpenAI API</span><span>Serper API</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">Fluent</h2>
-              <p class="project-card-tag">AI · SaaS · Speech</p>
-            </div>
-            <a href="https://speakfluent.coach" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              speakfluent.coach ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            AI-powered filler word detection and speech coaching. Fluent listens
-            as you speak, catches filler words in real time, and gives you an AI
-            coach to debrief your session and improve over time.
-          </p>
-          <div class="project-card-tech">
-            <span>Next.js</span><span>Supabase</span><span>Gemini AI</span><span>Stripe</span><span>Web Speech API</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">Limbo</h2>
-              <p class="project-card-tag">Productivity · File Management · Desktop</p>
-            </div>
-            <a href="https://trylimbo.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              trylimbo.vercel.app ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            A download manager that auto-deletes files after a set time. Every
-            file goes to "Limbo" — held temporarily so you can save or copy it,
-            then automatically cleared when the timer runs out.
-          </p>
-          <div class="project-card-tech">
-            <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">RepoAI</h2>
-              <p class="project-card-tag">AI · Developer Tools</p>
-            </div>
-            <a href="https://getrepoai.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm project-card-link">
-              getrepoai.vercel.app ↗
-            </a>
-          </div>
-          <p class="project-card-desc">
-            Understand any GitHub repository in seconds. RepoAI uses AI to
-            analyze and summarize codebases, so developers can get up to speed
-            on unfamiliar projects without digging through hundreds of files.
-          </p>
-          <div class="project-card-tech">
-            <span>AI</span><span>GitHub API</span><span>Vercel</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-top">
-            <div>
-              <h2 class="project-card-title">CFA Leadership Platform</h2>
-              <p class="project-card-tag">Full-Stack · Automation</p>
-            </div>
-          </div>
-          <p class="project-card-desc">
-            Built a website and automated email system for a Chick-fil-A
-            leadership organization. Streamlined event coordination and improved
-            communication across the group.
-          </p>
-          <div class="project-card-impact">
-            <span class="impact-label">Impact:</span> Measurably increased
-            engagement and meeting turnout through better communication.
-          </div>
-          <div class="project-card-tech">
-            <span>Web</span><span>Email Automation</span>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <script src="main.js"></script>
+    <div id="root" data-page="projects"></div>
+    <script type="module" src="/src/entry.tsx"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <title>If You Build It, They Will (Not) Come — Jaxson Sprinkles</title>
     <meta name="description" content="In a world where everyone can build, the people who win are the ones who can get eyeballs." />
     <link rel="canonical" href="https://jaxsonsprinkles.dev/blog/if-you-build-it-they-will-not-come.html" />
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="If You Build It, They Will (Not) Come" />
     <meta property="og:description" content="In a world where everyone can build, the people who win are the ones who can get eyeballs." />
@@ -14,7 +14,6 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="If You Build It, They Will (Not) Come" />
     <meta name="twitter:description" content="In a world where everyone can build, the people who win are the ones who can get eyeballs." />
-    <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,90 +22,7 @@
     />
   </head>
   <body>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="../index.html">Home</a>
-      <a href="../projects.html">Work</a>
-      <a href="../blog.html">Writing</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../resume.pdf" target="_blank">Resume</a>
-    </div>
-
-    <nav class="topnav">
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="../projects.html" class="nav-link">Work</a>
-        <a href="../blog.html" class="nav-link active">Writing</a>
-        <a href="../about.html" class="nav-link">About</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-        <a href="../resume.pdf" class="nav-link" target="_blank">Resume</a>
-      </div>
-    </nav>
-
-    <main class="content">
-      <a href="../blog.html" class="btn btn-ghost btn-sm blog-back">← writing</a>
-
-      <div class="blog-entry-header">
-        <div class="blog-entry-date">May 2, 2026</div>
-        <h1 class="blog-entry-title">If You Build It, They Will (Not) Come</h1>
-        <p class="blog-entry-sub">
-          In a world where everyone can build, the people who win are the ones
-          who can get eyeballs.
-        </p>
-      </div>
-
-      <div class="blog-entry-body">
-        <p>
-          For most of my life as a developer, I believed one simple idea: if you
-          build something great, people will come. That belief carried me
-          through five years of coding, and during that time I got really good
-          at building. I learned how to take an idea from nothing to a polished
-          product, with clean UI, solid backend systems, and thoughtful
-          features. On paper, these were the kinds of projects that should have
-          worked. But they didn't: not because they were bad, but because no one
-          ever saw them.
-        </p>
-        <p>
-          For a long time, I lived in what I now think of as the "builder's
-          bubble." It's the mindset that technical skill is the main bottleneck,
-          and that if your product isn't succeeding, it just means it's not good
-          enough yet. So you keep building. You redesign the UI, refactor the
-          backend, and add more features, thinking each improvement will finally
-          make the difference. But none of that actually matters if you don't
-          have distribution. I had projects I was genuinely proud of, but they
-          were sitting in silence, unused and unnoticed.
-        </p>
-        <p>
-          Then AI changed everything. Suddenly, building became much easier.
-          What used to take days could now take hours, and what once required
-          deep expertise could be assisted or even automated. The barrier to
-          creating something functional dropped dramatically, which led to a new
-          reality: building is no longer the rare skill — attention is. When
-          everyone can build, the advantage shifts to the people who can make
-          others care. That's when it clicked for me: the most valuable skill as
-          a developer today isn't coding; it's marketing.
-        </p>
-        <p>
-          If I had to redefine the developer "stack" today, it wouldn't just
-          include frontend and backend. It would include building, distribution,
-          and storytelling. Coding is still important, but it's no longer the
-          differentiator. This shift doesn't mean I'm building less; it means
-          I'm building differently. Now, every project is also a marketing
-          experiment. Every launch is intentional, and every idea is filtered
-          through one key question: can this get attention? Because attention is
-          leverage, and in a world where anyone can build, the people who win
-          are the ones who can get eyeballs.
-        </p>
-        <p>
-          For five years, I thought my job was to build great products. Now I
-          realize my job is to make sure people actually see them.
-        </p>
-      </div>
-    </main>
-
-    <script src="../main.js"></script>
+    <div id="root" data-page="post-build"></div>
+    <script type="module" src="/src/entry.tsx"></script>
   </body>
 </html>

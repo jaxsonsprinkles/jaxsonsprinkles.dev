@@ -6,7 +6,7 @@
     <title>About — Jaxson Sprinkles</title>
     <meta name="description" content="About Jaxson Sprinkles — developer, varsity athlete, and trilingual builder obsessed with new ways of talking to AI." />
     <link rel="canonical" href="https://jaxsonsprinkles.dev/about.html" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="About — Jaxson Sprinkles" />
     <meta property="og:description" content="Developer, varsity athlete, and trilingual builder obsessed with new ways of talking to AI." />
@@ -14,7 +14,6 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="About — Jaxson Sprinkles" />
     <meta name="twitter:description" content="Developer, varsity athlete, and trilingual builder obsessed with new ways of talking to AI." />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slot-text/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,79 +23,7 @@
     />
   </head>
   <body>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Work</a>
-      <a href="blog.html">Writing</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-    </div>
-
-    <nav class="topnav">
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="projects.html" class="nav-link">Work</a>
-        <a href="blog.html" class="nav-link">Writing</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="resume.pdf" class="nav-link" target="_blank">Resume</a>
-      </div>
-    </nav>
-
-    <main class="content">
-      <div class="page-header">
-        <h1 class="page-title">About</h1>
-      </div>
-
-      <div class="about-body">
-        <div class="about-text">
-          <p class="about-lead">
-            For the past <span id="years-counter" class="years-counter">0.0000000</span> years
-            I've been coding my way from training neural nets from scratch to
-            shipping full-stack applications that hundreds of people actually use.
-          </p>
-          <p>
-            Lately I'm obsessed with new ways of talking to AI - not just
-            chat windows, but places like iMessage, where it can just live
-            in the conversation instead of being a separate app you have to
-            think to open. I like poking at the edges of what AI can do and
-            where it's still clunky, then figuring out how to push past that.
-          </p>
-          <p>
-            Outside of coding, I'm a varsity athlete competing in cross country
-            and track. I'm fluent in English, Spanish, and Japanese. And I'm
-            probably the world's biggest Chipotle enthusiast.
-          </p>
-
-        </div>
-
-        <div class="about-photo">
-          <img src="IMG_0336.jpeg" alt="Jaxson Sprinkles" />
-        </div>
-      </div>
-    </main>
-
-    <script src="main.js"></script>
-    <script type="module">
-      import { slotText } from "https://cdn.jsdelivr.net/npm/slot-text/+esm";
-
-      const START = new Date("2020-06-15T00:00:00").getTime();
-      const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.25;
-
-      function yearsStr() {
-        return ((Date.now() - START) / MS_PER_YEAR).toFixed(7);
-      }
-
-      const el = document.getElementById("years-counter");
-      const label = slotText(el, yearsStr());
-
-      setInterval(() => {
-        label.set(yearsStr(), { direction: "up", duration: 250, stagger: 20 });
-      }, 350);
-    </script>
+    <div id="root" data-page="about"></div>
+    <script type="module" src="/src/entry.tsx"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <title>You Can Just Email People — Jaxson Sprinkles</title>
     <meta name="description" content="I sent one email asking for a chance. Three months later my code was live for thousands of students." />
     <link rel="canonical" href="https://jaxsonsprinkles.dev/blog/you-can-just-email-people.html" />
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="You Can Just Email People" />
     <meta property="og:description" content="I sent one email asking for a chance. Three months later my code was live for thousands of students." />
@@ -14,7 +14,6 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="You Can Just Email People" />
     <meta name="twitter:description" content="I sent one email asking for a chance. Three months later my code was live for thousands of students." />
-    <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,101 +22,7 @@
     />
   </head>
   <body>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="../index.html">Home</a>
-      <a href="../projects.html">Work</a>
-      <a href="../blog.html">Writing</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../resume.pdf" target="_blank">Resume</a>
-    </div>
-
-    <nav class="topnav">
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="../projects.html" class="nav-link">Work</a>
-        <a href="../blog.html" class="nav-link active">Writing</a>
-        <a href="../about.html" class="nav-link">About</a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-        <a href="../resume.pdf" class="nav-link" target="_blank">Resume</a>
-      </div>
-    </nav>
-
-    <main class="content">
-      <a href="../blog.html" class="btn btn-ghost btn-sm blog-back">← All posts</a>
-
-      <div class="blog-entry-header">
-        <div class="blog-entry-date">August 19, 2026</div>
-        <h1 class="blog-entry-title">You Can Just Email People</h1>
-        <p class="blog-entry-sub">
-          I sent one email asking for a chance. Three months later my code was
-          live for thousands of students.
-        </p>
-      </div>
-
-      <div class="blog-entry-body">
-        <p>
-          In March, I sent a cold email to the head of marketing at a startup
-          called Appybara. I didn't know anyone there. I didn't have a warm
-          intro. I just had a portfolio, a few shipped projects, and a sentence
-          that said "I think I could help." I didn't expect much. Most cold
-          emails go nowhere, and I'd sent enough of them by then to know that.
-        </p>
-        <p>
-          This one didn't go nowhere. The marketing lead liked what he saw and
-          connected me with the founder, Aleksei. A few conversations later, I
-          was a Full-Stack Software Engineering Intern at an AI-powered college
-          application platform, the kind of tool that helps students write
-          essays, get admissions feedback, and figure out how likely they are to
-          get into the college of their dreams. I'd be reporting straight to the
-          founder daily, on a small team, working on the real product.
-        </p>
-        <p>
-          I want to be clear about what that meant, because "internship" can
-          mean a lot of things. It didn't mean waiting for Aleksei to tell me
-          what to do every day or building a random feature in a PR that would
-          never get merged. It meant that my code would go out to real students
-          using the product to plan their futures. That's more pressure than
-          I've ever felt.
-        </p>
-        <p>
-          Once I actually started, the thing I hadn't anticipated was how much
-          of the job wasn't "add a feature" but "make the product trustworthy."
-          Appybara tells highschoolers how strong their college application is
-          and what to fix. If that advice is inconsistent, or the platform feels
-          like it can be gamed, or the interface makes you doubt what you're
-          looking at, the whole thing falls apart.
-        </p>
-        <p>
-          That paradigm is what connects almost everything I shipped. The
-          admissions review tool scores a student's profile using an LLM, and I
-          found that if you regenerated a review on the same profile, the scores
-          would drift (sometimes by a lot) because the model had no memory of
-          its own last answer. I fixed that by feeding previous scores back into
-          the prompt as anchors, which took the standard deviation across
-          repeated regenerations from 0.49 to 0.0. Same profile in, same answer
-          out.
-        </p>
-        <p>
-          What surprised me most was the amount of independence that teamwork
-          has. Not all of my assignments were supposed to be cherry-picked from
-          Linear; I had to use the site, find issues, and submit them on my own.
-          At Appybara, I had to justify "why does this matter" for every line of
-          a PR, and it has made me a sharper engineer than any project I built
-          on my own could have.
-        </p>
-        <p>
-          I still don't know exactly where this internship will lead me in the
-          future. But I know it started with one email at 10:26 AM. The ask is
-          usually cheaper than you think, and the work is usually more available
-          than you think: you just have to be brave enough to go looking for it.
-        </p>
-      </div>
-    </main>
-
-    <script src="../main.js"></script>
+    <div id="root" data-page="post-email"></div>
+    <script type="module" src="/src/entry.tsx"></script>
   </body>
 </html>

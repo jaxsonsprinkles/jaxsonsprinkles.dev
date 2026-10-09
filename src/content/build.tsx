@@ -1,0 +1,52 @@
+export function BuildPostBody() {
+  return (
+    <>
+        <p>
+          For most of my life as a developer, I believed one simple idea: if you
+          build something great, people will come. That belief carried me
+          through five years of coding, and during that time I got really good
+          at building. I learned how to take an idea from nothing to a polished
+          product, with clean UI, solid backend systems, and thoughtful
+          features. On paper, these were the kinds of projects that should have
+          worked. But they didn't: not because they were bad, but because no one
+          ever saw them.
+        </p>
+        <p>
+          For a long time, I lived in what I now think of as the "builder's
+          bubble." It's the mindset that technical skill is the main bottleneck,
+          and that if your product isn't succeeding, it just means it's not good
+          enough yet. So you keep building. You redesign the UI, refactor the
+          backend, and add more features, thinking each improvement will finally
+          make the difference. But none of that actually matters if you don't
+          have distribution. I had projects I was genuinely proud of, but they
+          were sitting in silence, unused and unnoticed.
+        </p>
+        <p>
+          Then AI changed everything. Suddenly, building became much easier.
+          What used to take days could now take hours, and what once required
+          deep expertise could be assisted or even automated. The barrier to
+          creating something functional dropped dramatically, which led to a new
+          reality: building is no longer the rare skill — attention is. When
+          everyone can build, the advantage shifts to the people who can make
+          others care. That's when it clicked for me: the most valuable skill as
+          a developer today isn't coding; it's marketing.
+        </p>
+        <p>
+          If I had to redefine the developer "stack" today, it wouldn't just
+          include frontend and backend. It would include building, distribution,
+          and storytelling. Coding is still important, but it's no longer the
+          differentiator. This shift doesn't mean I'm building less; it means
+          I'm building differently. Now, every project is also a marketing
+          experiment. Every launch is intentional, and every idea is filtered
+          through one key question: can this get attention? Because attention is
+          leverage, and in a world where anyone can build, the people who win
+          are the ones who can get eyeballs.
+        </p>
+        <p>
+          For five years, I thought my job was to build great products. Now I
+          realize my job is to make sure people actually see them.
+        </p>
+      
+    </>
+  );
+}

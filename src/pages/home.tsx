@@ -57,7 +57,7 @@ export function HomePage() {
             <p className="hero-bio">High school developer building at the intersection of AI and human behavior.</p>
           </div>
           <div className="hero-photo">
-            <img src="/IMG_0730.JPG" alt="Jaxson Sprinkles" />
+            <img src="/IMG_0730.jpg" alt="Jaxson Sprinkles" />
           </div>
         </div>
       </section>

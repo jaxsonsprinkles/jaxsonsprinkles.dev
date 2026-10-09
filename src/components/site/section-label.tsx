@@ -17,7 +17,7 @@ export function SectionLabel({
       <Divider
         align="start"
         className="flex-1"
-        contentClassName="font-mono text-caption-1-medium uppercase tracking-[0.12em] text-text-tertiary"
+        contentClassName="text-body-medium text-text-tertiary"
       >
         {children}
       </Divider>

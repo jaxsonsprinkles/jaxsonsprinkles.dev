@@ -63,7 +63,7 @@ export function HomePage() {
       </section>
 
       <section>
-        <SectionLabel first>stack</SectionLabel>
+        <SectionLabel first>Stack</SectionLabel>
         <div className="stack-marquee-wrap">
           <div className="stack-marquee-track">
             {[0, 1].flatMap((copy) =>
@@ -78,7 +78,7 @@ export function HomePage() {
       </section>
 
       <section>
-        <SectionLabel more={{ href: "/projects.html", label: "all projects" }}>work</SectionLabel>
+        <SectionLabel more={{ href: "/projects.html", label: "all projects" }}>Work</SectionLabel>
         <div className="row-list">
           {work.map((w) => (
             <a key={w.name} href={w.href} target="_blank" rel="noopener noreferrer" className="work-item">
@@ -98,14 +98,14 @@ export function HomePage() {
       </section>
 
       <section>
-        <SectionLabel>activity</SectionLabel>
+        <SectionLabel>Activity</SectionLabel>
         <div className="gh-chart-wrap">
           <GithubGraph />
         </div>
       </section>
 
       <section>
-        <SectionLabel more={{ href: "/blog.html", label: "all posts" }}>writing</SectionLabel>
+        <SectionLabel more={{ href: "/blog.html", label: "all posts" }}>Writing</SectionLabel>
         <div className="row-list">
           {posts.map((p) => (
             <a key={p.slug} href={`/blog/${p.slug}.html`} className="writing-item">

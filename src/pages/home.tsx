@@ -27,10 +27,10 @@ const stack = [
 ];
 
 const work = [
-  { name: "Cadence Labs", href: "https://cadencelabs.tech", domain: "cadencelabs.tech", icon: "/cadence.png", desc: "Pressure-sensing insoles that flag injury risk in runners" },
-  { name: "Mochi", href: "https://mochitext.com", domain: "mochitext.com", desc: "Calorie tracking via iMessage — just text a meal" },
+  { name: "Cadence", href: "https://cadencelabs.tech", domain: "cadencelabs.tech", icon: "/cadence.png", desc: "Pressure-sensing insoles that flag injury risk in runners" },
+  { name: "Mochi", href: "https://mochitext.com", domain: "mochitext.com", desc: "Calorie tracking via iMessage: just text a meal" },
   { name: "Forge", href: "https://github.com/jaxsonsprinkles/forge", domain: "github.com", desc: "Self-improving AI agent framework" },
-  { name: "Avian", href: "https://avian.sh", domain: "avian.sh", desc: "AI outreach research — turn any name into a conversation" },
+  { name: "Avian", href: "https://avian.sh", domain: "avian.sh", desc: "AI outreach research: turn any name into a conversation" },
 ];
 
 function Footer() {
@@ -53,7 +53,7 @@ export function HomePage() {
         <div className="hero-inner">
           <div className="hero-left">
             <h1 className="hero-name">Jaxson Sprinkles</h1>
-            <p className="hero-bio">High school developer currently building pressure-sensing insoles for runners.</p>
+            <p className="hero-bio">High school founder and developer building intelligent technology for athletes, students, and other coders.</p>
           </div>
           <div className="hero-photo">
             <img src="/IMG_0730.jpg" alt="Jaxson Sprinkles" />

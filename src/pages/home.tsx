@@ -27,11 +27,10 @@ const stack = [
 ];
 
 const work = [
-  { name: "Mochi", href: "https://mochitext.com", domain: "mochitext.com", desc: "Calorie tracking via iMessage — text a meal, get instant logging" },
-  { name: "Forge", href: "https://github.com/jaxsonsprinkles/forge", domain: "github.com", desc: "Self-improving AI agent framework — agents that rewrite and test their own code" },
+  { name: "Cadence Labs", href: "https://cadencelabs.tech", domain: "cadencelabs.tech", icon: "/cadence.png", desc: "Pressure-sensing insoles that flag injury risk in runners" },
+  { name: "Mochi", href: "https://mochitext.com", domain: "mochitext.com", desc: "Calorie tracking via iMessage — just text a meal" },
+  { name: "Forge", href: "https://github.com/jaxsonsprinkles/forge", domain: "github.com", desc: "Self-improving AI agent framework" },
   { name: "Avian", href: "https://avian.sh", domain: "avian.sh", desc: "AI outreach research — turn any name into a conversation" },
-  { name: "Fluent", href: "https://speakfluent.coach", domain: "speakfluent.coach", desc: "AI filler word detection and speech coaching" },
-  { name: "RepoAI", href: "https://getrepoai.vercel.app", domain: "getrepoai.vercel.app", desc: "Understand any GitHub repo in seconds with AI" },
 ];
 
 function Footer() {
@@ -54,7 +53,7 @@ export function HomePage() {
         <div className="hero-inner">
           <div className="hero-left">
             <h1 className="hero-name">Jaxson Sprinkles</h1>
-            <p className="hero-bio">High school developer building at the intersection of AI and human behavior.</p>
+            <p className="hero-bio">High school developer currently building pressure-sensing insoles for runners.</p>
           </div>
           <div className="hero-photo">
             <img src="/IMG_0730.jpg" alt="Jaxson Sprinkles" />
@@ -78,13 +77,13 @@ export function HomePage() {
       </section>
 
       <section>
-        <SectionLabel more={{ href: "/projects.html", label: "all projects" }}>Work</SectionLabel>
+        <SectionLabel>Work</SectionLabel>
         <div className="row-list">
           {work.map((w) => (
             <a key={w.name} href={w.href} target="_blank" rel="noopener noreferrer" className="work-item">
               <img
                 className="work-favicon"
-                src={`https://www.google.com/s2/favicons?domain=${w.domain}&sz=32`}
+                src={w.icon ?? `https://www.google.com/s2/favicons?domain=${w.domain}&sz=32`}
                 alt=""
                 aria-hidden
                 onError={(e) => (e.currentTarget.style.display = "none")}

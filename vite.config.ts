@@ -10,7 +10,6 @@ const pages = [
   "about",
   "blog",
   "contact",
-  "projects",
   "blog/if-you-build-it-they-will-not-come",
   "blog/you-can-just-email-people",
   "articles/index",

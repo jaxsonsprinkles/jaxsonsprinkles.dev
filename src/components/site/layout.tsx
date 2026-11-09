@@ -5,7 +5,6 @@ import { cx } from "@/utils/cx";
 
 const links: { href: string; label: string; match: string[]; desktop: boolean; external?: boolean }[] = [
   { href: "/index.html", label: "Home", match: ["", "index.html"], desktop: true },
-  { href: "/projects.html", label: "Work", match: ["projects.html"], desktop: true },
   { href: "/blog.html", label: "Writing", match: ["blog.html"], desktop: true },
   { href: "/about.html", label: "About", match: ["about.html"], desktop: true },
   { href: "/contact.html", label: "Contact", match: ["contact.html"], desktop: true },

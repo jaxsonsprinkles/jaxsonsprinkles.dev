@@ -82,7 +82,7 @@ body {
   .work-item { align-items: center; padding: 13px 0; }
   .writing-item, .blog-post-row { align-items: baseline; padding: 13px 0; }
   .work-favicon { width: 16px; height: 16px; border-radius: 3px; flex-shrink: 0; object-fit: contain; }
-  .work-name { font-size: 0.93rem; font-weight: 500; min-width: 88px; flex-shrink: 0; transition: color 0.15s; }
+  .work-name { font-size: 0.93rem; font-weight: 500; min-width: 98px; flex-shrink: 0; transition: color 0.15s; }
   .work-item:hover .work-name, .writing-item:hover .row-title, .blog-post-row:hover .row-title { color: var(--color-accent-600); }
   .work-desc { font-size: 0.85rem; color: var(--color-text-secondary); flex: 1; line-height: 1.4; }
   .row-arrow { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-tertiary); flex-shrink: 0; opacity: 0; transition: opacity 0.15s, transform 0.15s; }

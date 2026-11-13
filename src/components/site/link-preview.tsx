@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 const W = 320;
@@ -54,9 +55,13 @@ export function LinkPreview({ href, src, className, children }: { href: string; 
       <a href={href} target="_blank" rel="noopener noreferrer" className={className} onPointerEnter={enter} onPointerMove={move} onPointerLeave={leave}>
         {children}
       </a>
-      <div ref={card} className="link-preview" data-active={active || undefined} style={{ width: W, height: H }} aria-hidden>
-        <img src={src} alt="" />
-      </div>
+      {/* portaled: an animated ancestor's transform would otherwise become the fixed card's containing block */}
+      {createPortal(
+        <div ref={card} className="link-preview" data-active={active || undefined} style={{ width: W, height: H }} aria-hidden>
+          <img src={src} alt="" />
+        </div>,
+        document.body,
+      )}
     </>
   );
 }

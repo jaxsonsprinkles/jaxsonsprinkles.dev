@@ -2,6 +2,9 @@ import { RiArrowRightLine, RiArrowRightUpLine } from "@remixicon/react";
 import { Layout } from "@/components/site/layout";
 import { SectionLabel } from "@/components/site/section-label";
 import { GithubGraph } from "@/components/site/github-graph";
+import { Focusable } from "react-aria-components";
+import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
+import { LinkPreview } from "@/components/site/link-preview";
 import { Hint } from "@/components/site/hint";
 import { LinkButton } from "@/components/base/buttons/link-button";
 import { posts } from "@/content/posts";
@@ -50,15 +53,36 @@ export function HomePage() {
   return (
     <Layout footer={<Footer />}>
       <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-left">
-            <h1 className="hero-name">Jaxson Sprinkles</h1>
-            <p className="hero-bio">High school founder and developer building intelligent technology for athletes, students, and other coders.</p>
-          </div>
-          <div className="hero-photo">
-            <img src="/IMG_0730.jpg" alt="Jaxson Sprinkles" />
-          </div>
-        </div>
+        <h1 className="hero-text">
+          Hi, I'm{" "}
+          <TooltipTrigger delay={0}>
+            <Focusable>
+              <a href="https://linkedin.com/in/jaxsonsprinkles" target="_blank" rel="noopener noreferrer" className="hero-link hero-name-link">
+                <img src="/IMG_0730.jpg" alt="" className="hero-avatar" />
+                Jaxson Sprinkles
+                <span className="hero-hover-hint" aria-hidden>
+                  <svg viewBox="0 0 80 44" width="80" height="44" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M76 8 C58 -2 44 2 44 10 C44 16 52 14 50 8 C48 4 30 6 12 34" />
+                    <path d="M5 22 L11 35 L24 31" />
+                  </svg>
+                  hover me
+                </span>
+              </a>
+            </Focusable>
+            <Tooltip>See my LinkedIn</Tooltip>
+          </TooltipTrigger>
+          , a high school founder building{" "}
+          <LinkPreview href="https://cadencelabs.tech" src="/previews/cadence.png" className="hero-link">
+            <img src="/cadence.png" alt="" className="hero-logo" />
+            Cadence
+          </LinkPreview>{" "}
+          for runners and{" "}
+          <LinkPreview href="https://avian.sh" src="/previews/avian.png" className="hero-link">
+            <img src="/avian.png" alt="" className="hero-logo" />
+            Avian
+          </LinkPreview>{" "}
+          for other students and developers.
+        </h1>
       </section>
 
       <section>

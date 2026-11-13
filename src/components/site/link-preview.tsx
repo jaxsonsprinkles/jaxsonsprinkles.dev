@@ -6,7 +6,9 @@ const H = 200;
 const MAX_TILT = 8;
 
 /** Link that shows a screenshot preview trailing the cursor (eased) and tilting with its x position. */
-export function LinkPreview({ href, src, className, children }: { href: string; src: string; className?: string; children: ReactNode }) {
+export function LinkPreview({ href, src, className, size, children }: { href: string; src: string; className?: string; size?: number; children: ReactNode }) {
+  const w = size ?? W;
+  const h = size ?? H;
   const [active, setActive] = useState(false);
   const card = useRef<HTMLDivElement>(null);
   const target = useRef({ x: 0, y: 0, rot: 0 });
@@ -30,8 +32,8 @@ export function LinkPreview({ href, src, className, children }: { href: string; 
   const move = (e: React.PointerEvent) => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     target.current = {
-      x: e.clientX - W / 2,
-      y: e.clientY - H / 2,
+      x: e.clientX - w / 2,
+      y: e.clientY - h / 2,
       rot: reduce ? 0 : ((e.clientX / window.innerWidth) * 2 - 1) * MAX_TILT,
     };
   };
@@ -57,7 +59,7 @@ export function LinkPreview({ href, src, className, children }: { href: string; 
       </a>
       {/* portaled: an animated ancestor's transform would otherwise become the fixed card's containing block */}
       {createPortal(
-        <div ref={card} className="link-preview" data-active={active || undefined} style={{ width: W, height: H }} aria-hidden>
+        <div ref={card} className="link-preview" data-active={active || undefined} style={{ width: w, height: h }} aria-hidden>
           <img src={src} alt="" />
         </div>,
         document.body,

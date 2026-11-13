@@ -46,7 +46,7 @@ export function ContactPage() {
       <div className="page-header">
         <h1 className="page-title">Contact</h1>
         <p className="page-sub">
-          Always open to interesting conversations — project ideas, collaborations, or just to say hi.
+          Always open to interesting conversations: project ideas, collaborations, or just to say hi.
         </p>
       </div>
 

@@ -45,7 +45,7 @@ export function AboutPage() {
         </div>
 
         <div className="about-photo">
-          <img src="/IMG_0336.jpeg" alt="Jaxson Sprinkles" />
+          <img src="/about.jpg" alt="Jaxson Sprinkles" />
         </div>
       </div>
     </Layout>

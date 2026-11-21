@@ -22,6 +22,9 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run build
+        env:
+          # Read-only WaniKani token, baked into the public bundle to fetch the live level.
+          VITE_WANIKANI_TOKEN: ${{ secrets.WANIKANI_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

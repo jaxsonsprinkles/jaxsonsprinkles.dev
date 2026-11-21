@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { slotText } from "slot-text";
 import { Layout } from "@/components/site/layout";
 
@@ -20,6 +20,31 @@ function YearsCounter() {
   return <span ref={ref} className="years-counter">0.0000000</span>;
 }
 
+// Shown until the live WaniKani level arrives (or if no token is configured).
+const FALLBACK_WANIKANI_LEVEL = 23;
+
+function WanikaniLevel() {
+  const [level, setLevel] = useState(FALLBACK_WANIKANI_LEVEL);
+
+  useEffect(() => {
+    const token = import.meta.env.VITE_WANIKANI_TOKEN;
+    if (!token) return;
+    const ctrl = new AbortController();
+    fetch("https://api.wanikani.com/v2/user", {
+      headers: { Authorization: `Bearer ${token}`, "Wanikani-Revision": "20170710" },
+      signal: ctrl.signal,
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => {
+        if (Number.isInteger(j?.data?.level)) setLevel(j.data.level);
+      })
+      .catch(() => {});
+    return () => ctrl.abort();
+  }, []);
+
+  return <>{level}</>;
+}
+
 export function AboutPage() {
   return (
     <Layout>
@@ -30,18 +55,54 @@ export function AboutPage() {
       <div className="about-body">
         <div className="about-text">
           <p className="about-lead">
-            For the past <YearsCounter /> years I've been coding my way from training neural nets from scratch to
-            shipping full-stack applications that hundreds of people actually use.
+            To know me, you have to know how I build a Chipotle burrito. I eat there so much my life has started to
+            resemble one. (I have over 12,000 Chipotle points.)
           </p>
-          <p>
-            Lately I'm obsessed with new ways of talking to AI - not just chat windows, but places like iMessage, where
-            it can just live in the conversation instead of being a separate app you have to think to open. I like
-            poking at the edges of what AI can do and where it's still clunky, then figuring out how to push past that.
-          </p>
-          <p>
-            Outside of coding, I'm a varsity athlete competing in cross country and track. I'm fluent in English,
-            Spanish, and Japanese. And I'm probably the world's biggest Chipotle enthusiast.
-          </p>
+          <p>My perfect burrito has five things in it, and so do I.</p>
+          <dl className="burrito">
+            <div>
+              <dt className="text-body-medium text-text-tertiary">Rice</dt>
+              <dd>
+                I'm a runner. I run varsity cross country and track, and I'm a 4‑time district champion. My team has
+                placed top 15 in the state, and it's a 4‑time district champion too.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-body-medium text-text-tertiary">Beans</dt>
+              <dd>
+                I'm a polyglot. I speak English, Spanish, and Japanese. I'm currently level <WanikaniLevel /> on{" "}
+                <a href="https://www.wanikani.com" target="_blank" rel="noopener noreferrer" className="text-accent-600 underline underline-offset-3">
+                  WaniKani
+                </a>
+                .
+              </dd>
+            </div>
+            <div>
+              <dt className="text-body-medium text-text-tertiary">Meat</dt>
+              <dd>
+                I'm a coder. I've been coding for <YearsCounter /> years, building everything from neural networks and
+                bigram models to consumer apps that hundreds of people use every day.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-body-medium text-text-tertiary">Guacamole</dt>
+              <dd>
+                I'm a creator. Since I was 10, I've been sharing my content with the world, and now I post to over 5,000
+                followers on{" "}
+                <a href="https://instagram.com/jaxsonsprinkles" target="_blank" rel="noopener noreferrer" className="text-accent-600 underline underline-offset-3">
+                  Instagram
+                </a>
+                .
+              </dd>
+            </div>
+            <div>
+              <dt className="text-body-medium text-text-tertiary">Tortilla</dt>
+              <dd>
+                I'm a problem solver. It holds everything else together: whatever I touch, I look for a way to make it
+                better.
+              </dd>
+            </div>
+          </dl>
         </div>
 
         <div className="about-photo">

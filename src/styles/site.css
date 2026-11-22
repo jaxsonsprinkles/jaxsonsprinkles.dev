@@ -124,7 +124,8 @@ body {
   .impact-label { font-weight: 600; color: var(--color-text-primary); margin-right: 6px; }
 
   /* About */
-  .about-body { display: grid; grid-template-columns: 1fr 260px; gap: 52px; align-items: start; }
+  .content:has(.about-body) { max-width: 940px; }
+  .about-body { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
   .years-counter { display: inline-block; min-width: 8.5ch; font-variant-numeric: tabular-nums; font-family: var(--font-mono); font-size: 0.9em; font-weight: 700; }
   .about-lead { font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px; }
   .about-text p:not(.about-lead) { font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 14px; }
@@ -132,7 +133,7 @@ body {
   .burrito > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 16px 0; border-bottom: 1px solid var(--color-separator-border); }
   .burrito dd { margin: 0; font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.8; }
   .about-photo { position: sticky; top: 72px; }
-  .about-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; border: 1px solid var(--color-separator-border); filter: grayscale(15%); }
+  .about-photo img { width: 100%; aspect-ratio: 9/8; object-fit: cover; border-radius: 8px; border: 1px solid var(--color-separator-border); filter: grayscale(15%); }
   .signature { display: block; width: 220px; height: 136px; aspect-ratio: 295 / 182; margin: 0 auto 8px; }
 
   /* Contact */
@@ -193,7 +194,7 @@ body {
     .hero-text { font-size: 1.5rem; }
     .hero-hover-hint { display: none; }
     .about-body { grid-template-columns: 1fr; }
-    .about-photo { position: static; max-width: 150px; order: -1; }
+    .about-photo { position: static; max-width: 220px; order: -1; }
     .page-title { font-size: 1.3rem; }
   }
 

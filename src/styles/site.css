@@ -1,10 +1,9 @@
 @import "./globals.css";
 
-/* Site tokens. BoardUI reads --font-inter / --font-mono-source (set by next/font
+/* Site tokens. BoardUI reads --font-inter (set by next/font
  * in a Next app); here the fonts come from the Google Fonts <link> in each page. */
 :root {
   --font-inter: "Inter";
-  --font-mono-source: "JetBrains Mono";
 
   /* Retint BoardUI's accent ramp to the site's green. */
   --color-accent-50: #eef8f2;
@@ -47,7 +46,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .mono { font-family: var(--font-mono); }
 
   /* Hero */
   .hero { margin-bottom: 80px; }
@@ -96,10 +94,10 @@ body {
   .work-name { font-size: 0.93rem; font-weight: 500; min-width: 98px; flex-shrink: 0; transition: color 0.15s; }
   .work-item:hover .work-name, .writing-item:hover .row-title, .blog-post-row:hover .row-title { color: var(--color-accent-600); }
   .work-desc { font-size: 0.85rem; color: var(--color-text-secondary); flex: 1; line-height: 1.4; }
-  .row-arrow { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-tertiary); flex-shrink: 0; opacity: 0; transition: opacity 0.15s, transform 0.15s; }
+  .row-arrow { font-size: 0.8rem; color: var(--color-text-tertiary); flex-shrink: 0; opacity: 0; transition: opacity 0.15s, transform 0.15s; }
   .work-item:hover .row-arrow { opacity: 1; transform: translate(2px, -2px); }
   .writing-item:hover .row-arrow, .blog-post-row:hover .row-arrow { opacity: 1; transform: translateX(3px); }
-  .row-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-tertiary); flex-shrink: 0; min-width: 62px; }
+  .row-date { font-size: 0.72rem; color: var(--color-text-tertiary); flex-shrink: 0; min-width: 62px; }
   .row-title { font-size: 0.92rem; flex: 1; transition: color 0.15s; line-height: 1.4; }
 
   /* GitHub activity */
@@ -115,7 +113,7 @@ body {
   .project-card:first-child { border-top: 1px solid var(--color-separator-border); }
   .project-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 10px; }
   .project-card-title { font-size: 1rem; font-weight: 600; margin-bottom: 3px; letter-spacing: -0.01em; }
-  .project-card-tag { font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .project-card-tag { font-size: 0.68rem; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; }
   .project-card-desc { font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 14px; }
   .project-card-impact {
     font-size: 0.82rem; color: var(--color-text-secondary); margin-bottom: 14px; padding: 9px 13px;
@@ -126,7 +124,7 @@ body {
   /* About */
   .content:has(.about-body) { max-width: 940px; }
   .about-body { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
-  .years-counter { display: inline-block; min-width: 8.5ch; font-variant-numeric: tabular-nums; font-family: var(--font-mono); font-size: 0.9em; font-weight: 700; }
+  .years-counter { display: inline-block; min-width: 8.5ch; font-variant-numeric: tabular-nums; font-size: 0.9em; font-weight: 700; }
   .about-lead { font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px; }
   .about-text p:not(.about-lead) { font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 14px; }
   .burrito { margin: 22px 0 0; border-top: 1px solid var(--color-separator-border); }
@@ -148,13 +146,13 @@ body {
   .contact-row-info { flex: 1; }
   .contact-row-label { font-size: 0.9rem; font-weight: 500; margin-bottom: 1px; transition: color 0.15s; }
   .contact-row:hover .contact-row-label { color: var(--color-accent-600); }
-  .contact-row-handle { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-tertiary); }
+  .contact-row-handle { font-size: 0.72rem; color: var(--color-text-tertiary); }
   .contact-row:hover .row-arrow { opacity: 1; transform: translate(2px, -2px); }
 
   /* Blog entry */
   .blog-back { margin-bottom: 36px; }
   .blog-entry-header { margin-bottom: 36px; }
-  .blog-entry-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .blog-entry-date { font-size: 0.72rem; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
   .blog-entry-title { font-size: 1.7rem; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.03em; line-height: 1.2; }
   .blog-entry-sub { font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.65; }
   .blog-entry-body { font-size: 0.95rem; line-height: 1.85; color: var(--color-text-secondary); border-top: 1px solid var(--color-separator-border); padding-top: 28px; }
@@ -185,7 +183,7 @@ body {
   .article-wrap ul li { margin-bottom: 8px; }
   .headline-example {
     background: var(--color-background-secondary-default); border: 1px solid var(--color-separator-border); border-radius: 8px;
-    padding: 16px 20px; font-family: var(--font-mono); font-size: 0.9rem; margin: 16px 0;
+    padding: 16px 20px; font-size: 0.9rem; margin: 16px 0;
   }
   .outro { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--color-separator-border); }
 

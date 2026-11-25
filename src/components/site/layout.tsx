@@ -40,7 +40,7 @@ export function Layout({ children, footer }: { children: ReactNode; footer?: Rea
                 rel={l.external ? "noopener noreferrer" : undefined}
                 aria-current={l.match.includes(page) ? "page" : undefined}
                 className={cx(
-                  "rounded-md px-2.5 py-1.5 font-mono text-caption-1-medium text-text-tertiary transition-colors duration-150",
+                  "rounded-md px-2.5 py-1.5 text-caption-1-medium text-text-tertiary transition-colors duration-150",
                   "outline-none hover:bg-background-secondary-default hover:text-text-primary focus-visible:ring-2 focus-visible:ring-border-focus-ring",
                   l.match.includes(page) && "bg-background-secondary-default text-text-primary",
                 )}
@@ -73,7 +73,7 @@ export function Layout({ children, footer }: { children: ReactNode; footer?: Rea
             href={l.href}
             target={l.external ? "_blank" : undefined}
             onClick={() => setOpen(false)}
-            className="px-6 py-2.5 font-mono text-title-3-semibold text-text-secondary transition-colors hover:text-text-primary"
+            className="px-6 py-2.5 text-title-3-semibold text-text-secondary transition-colors hover:text-text-primary"
           >
             {l.label}
           </a>

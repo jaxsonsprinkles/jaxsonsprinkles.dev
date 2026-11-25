@@ -68,7 +68,7 @@ export function GithubGraph() {
   }, []);
 
   if (failed) return <p className="text-caption-1-medium text-text-tertiary">could not load activity</p>;
-  if (!weeks) return <p className="font-mono text-caption-1-medium text-text-tertiary">loading...</p>;
+  if (!weeks) return <p className="text-caption-1-medium text-text-tertiary">loading...</p>;
 
   const total = weeks.flat().reduce((sum, d) => sum + (d.future ? 0 : d.count), 0);
 
@@ -80,7 +80,7 @@ export function GithubGraph() {
             {monthLabels(weeks).map((m) => (
               <span
                 key={m.col}
-                className="absolute font-mono text-[10px] text-text-tertiary"
+                className="absolute text-[10px] text-text-tertiary"
                 style={{ left: m.col * STEP }}
               >
                 {m.label}
@@ -113,7 +113,7 @@ export function GithubGraph() {
           </div>
         </div>
       </div>
-      <p className="mt-2.5 font-mono text-[11px] text-text-tertiary">
+      <p className="mt-2.5 text-[11px] text-text-tertiary">
         {total.toLocaleString()} contributions in the last 9 months
       </p>
     </div>
